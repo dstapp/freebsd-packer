@@ -1,0 +1,120 @@
+{
+    "push": {
+      "name": "dprandzioch/freebsd-10_2-minimal",
+      "vcs": true
+    },
+    "variables": {
+        "atlas_username": "{{env `ATLAS_USERNAME`}}",
+        "atlas_name": "{{env `ATLAS_NAME`}}"
+    },
+    "provisioners": [
+        {
+            "type": "shell",
+            "scripts": [
+                "scripts/base.sh"
+            ]
+        }
+    ],
+    "builders": [
+        {
+            "type": "virtualbox-iso",
+            "boot_command": [
+                "<enter><wait>",
+                "<enter><wait>",
+                "vagrant<enter><wait>",
+                "<down><spacebar>",
+                "<down>",
+                "<down><spacebar><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "<wait10>",
+                "<wait10>",
+                "<wait10>",
+                "<wait10>",
+                "vagrant<enter><wait>",
+                "vagrant<enter><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "<wait10>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "<wait10>",
+                "<wait10>",
+                "<enter><wait>",
+                "<right>",
+                "<enter><wait>",
+                "a<enter><wait>",
+                "<enter><wait>",
+                "<down>",
+                "<down>",
+                "<down>",
+                "<down>",
+                "<down><spacebar><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "vagrant<enter><wait>",
+                "Vagrant User<enter><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "wheel<enter><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "<enter><wait>",
+                "vagrant<enter><wait>",
+                "vagrant<enter><wait>",
+                "<enter><wait>",
+                "yes<enter><wait>",
+                "no<enter><wait>",
+                "<enter><wait5>",
+                "<left><enter><wait>",
+                "sed -i -e 's/#PermitRootLogin no/PermitRootLogin yes/' /etc/ssh/sshd_config<enter><wait>",
+                "chsh -s sh root<enter><wait>",
+                "exit<enter><wait>",
+                "<enter>",
+                "<wait10>",
+                "<wait10>",
+                "<wait10>"
+            ],
+            "headless": false,
+            "boot_wait": "30s",
+            "disk_size": 20480,
+            "guest_os_type": "FreeBSD_64",
+            "http_directory": "http",
+            "iso_checksum": "ab5842858500b7a62889df39a1932343",
+            "iso_checksum_type": "md5",
+            "iso_url": "http://ftp.freebsd.org/pub/FreeBSD/releases/ISO-IMAGES/10.2/FreeBSD-10.2-RELEASE-amd64-disc1.iso",
+            "ssh_username": "root",
+            "ssh_password": "vagrant",
+            "ssh_port": 22,
+            "ssh_wait_timeout": "10000s",
+            "shutdown_command": "poweroff; poweroff",
+            "virtualbox_version_file": ".vbox_version"
+        }
+    ],
+    "post-processors": [
+        [{
+            "type": "vagrant",
+            "keep_input_artifact": false
+        },
+        {
+            "type": "atlas",
+            "only": ["virtualbox-iso"],
+            "artifact": "dprandzioch/freebsd-10_2-minimal",
+            "artifact_type": "vagrant.box",
+            "metadata": {
+                "provider": "virtualbox",
+                "version": "0.9.0"
+            }
+        }]
+    ]
+}
