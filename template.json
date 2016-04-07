@@ -1,6 +1,6 @@
 {
     "push": {
-      "name": "dprandzioch/freebsd-10_2-minimal",
+      "name": "dprandzioch/freebsd-10_3-minimal",
       "vcs": true
     },
     "variables": {
@@ -90,9 +90,9 @@
             "disk_size": 20480,
             "guest_os_type": "FreeBSD_64",
             "http_directory": "http",
-            "iso_checksum": "ab5842858500b7a62889df39a1932343",
-            "iso_checksum_type": "md5",
-            "iso_url": "http://ftp.freebsd.org/pub/FreeBSD/releases/ISO-IMAGES/10.2/FreeBSD-10.2-RELEASE-amd64-disc1.iso",
+            "iso_checksum": "8137966d9b62eb4bf597b047a8a43ae9f9a06f23ab7c812f229d32cbfab5bb0cc27089dcfb5d233e50a18620b75606e31ff01bb3084517746664b3b3c46c9d04",
+            "iso_checksum_type": "sha512",
+            "iso_url": "http://ftp.freebsd.org/pub/FreeBSD/releases/ISO-IMAGES/10.3/FreeBSD-10.3-RELEASE-amd64-disc1.iso",
             "ssh_username": "root",
             "ssh_password": "vagrant",
             "ssh_port": 22,
@@ -109,11 +109,11 @@
         {
             "type": "atlas",
             "only": ["virtualbox-iso"],
-            "artifact": "dprandzioch/freebsd-10_2-minimal",
+            "artifact": "dprandzioch/freebsd-10_3-minimal",
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "virtualbox",
-                "version": "0.9.0"
+                "version": "1.0.0"
             }
         }]
     ]
