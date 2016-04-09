@@ -36,28 +36,35 @@
                 "<wait10>",
                 "<wait10>",
                 "<wait10>",
+                "<wait10>",
+                "<wait10>",
+                "<wait10>",
+                "<wait10>",
+                "<wait10>",
                 "vagrant<enter><wait>",
                 "vagrant<enter><wait>",
-                "<enter><wait>",
-                "<enter><wait>",
-                "<enter><wait>",
-                "<wait10>",
-                "<enter><wait>",
-                "<enter><wait>",
+                "<enter><wait5>",
+                "<enter><wait5>",
+                "<enter><wait5>",
                 "<wait10>",
                 "<wait10>",
-                "<enter><wait>",
+                "<enter><wait5>",
+                "<enter><wait5>",
+                "<wait10>",
+                "<wait10>",
+                "<wait10>",
+                "<enter><wait5>",
                 "<right>",
-                "<enter><wait>",
-                "a<enter><wait>",
-                "<enter><wait>",
+                "<enter><wait5>",
+                "a<enter><wait5>",
+                "<enter><wait5>",
                 "<down>",
                 "<down>",
                 "<down>",
                 "<down>",
-                "<down><spacebar><wait>",
-                "<enter><wait>",
-                "<enter><wait>",
+                "<down><spacebar><wait5>",
+                "<enter><wait5>",
+                "<enter><wait5>",
                 "vagrant<enter><wait>",
                 "Vagrant User<enter><wait>",
                 "<enter><wait>",
@@ -105,16 +112,16 @@
         [{
             "type": "vagrant",
             "keep_input_artifact": false
-        },
-        {
+		},
+		{
             "type": "atlas",
-            "only": ["virtualbox-iso"],
-            "artifact": "dprandzioch/freebsd-10_3-minimal",
-            "artifact_type": "vagrant.box",
-            "metadata": {
-                "provider": "virtualbox",
-                "version": "1.0.0"
-            }
+		    "only": ["virtualbox-iso"],
+			"artifact": "dprandzioch/freebsd-10_3-minimal",
+			"artifact_type": "vagrant.box",
+			"metadata": {
+				"provider": "virtualbox",
+				"version": "1.0.0"
+			}
         }]
     ]
 }
