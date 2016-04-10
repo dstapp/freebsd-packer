@@ -103,6 +103,16 @@
         [{
             "type": "vagrant",
             "keep_input_artifact": false
+        },
+        {
+            "type": "atlas",
+            "only": ["virtualbox-iso"],
+            "artifact": "dprandzioch/freebsd-10_3-minimal",
+            "artifact_type": "vagrant.box",
+            "metadata": {
+                "provider": "virtualbox",
+                "version": "1.0.0"
+            }
         }]
     ]
 }
