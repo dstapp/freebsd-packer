@@ -32,27 +32,18 @@
                 "<enter><wait>",
                 "<enter><wait>",
                 "<enter><wait>",
-                "<wait10>",
-                "<wait10>",
-                "<wait10>",
-                "<wait10>",
-                "<wait10>",
-                "<wait10>",
-                "<wait10>",
-                "<wait10>",
-                "<wait10>",
+                "<wait10><wait10><wait10>",
+                "<wait10><wait10><wait10>",
+                "<wait10><wait10><wait10>",
                 "vagrant<enter><wait>",
                 "vagrant<enter><wait>",
                 "<enter><wait5>",
                 "<enter><wait5>",
                 "<enter><wait5>",
-                "<wait10>",
-                "<wait10>",
+                "<wait10><wait10>",
                 "<enter><wait5>",
                 "<enter><wait5>",
-                "<wait10>",
-                "<wait10>",
-                "<wait10>",
+                "<wait10><wait10><wait10>",
                 "<enter><wait5>",
                 "<right>",
                 "<enter><wait5>",
@@ -112,16 +103,6 @@
         [{
             "type": "vagrant",
             "keep_input_artifact": false
-		},
-		{
-            "type": "atlas",
-		    "only": ["virtualbox-iso"],
-			"artifact": "dprandzioch/freebsd-10_3-minimal",
-			"artifact_type": "vagrant.box",
-			"metadata": {
-				"provider": "virtualbox",
-				"version": "1.0.0"
-			}
         }]
     ]
 }
