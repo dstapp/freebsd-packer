@@ -9,26 +9,22 @@ fi
 pkg install -y ca_root_nss
 
 # vbox guest extensions
-#
-# nooope...
-#
-# https://www.freebsd.org/doc/handbook/virtualization-guest-virtualbox-guest-additions.html
-#
-# The VirtualBox™ guest additions provide support for:
-# * Clipboard sharing.
-# * Mouse pointer integration.
-# * Host time synchronization.
-# * Window scaling.
-# * Seamless mode.
-#
-# nothing of that is needed for vagrant and vboxsf doen't work anyway
+pkg install -y virtualbox-ose-additions
+sysrc vboxguest_enable=yes
+sysrc vboxservice_enable=yes
+sysrc vboxnet_enable=yes
 
 cat <<'EOF' >> /boot/loader.conf
+if_vtnet_load="YES"
+vboxdrv_load="YES"
+virtio_balloon_load="YES"
+virtio_blk_load="YES"
+virtio_scsi_load="YES"
 autoboot_delay="-1"
 EOF
 
 # sudo
-pkg install -y sudo nano
+pkg install -y sudo wget nano
 echo 'vagrant ALL=(ALL) NOPASSWD: ALL' > /usr/local/etc/sudoers.d/vagrant
 
 # vagrant ssh keys
